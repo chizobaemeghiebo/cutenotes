@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@theme {
+  --font-heading: "chocoladine", sans-serif;
+  --font-note: "asdonuts", sans-serif;
+  --font-regular: "frisky_puppy", sans-serif;
+  --font-title: "dunkin_sans", sans-serif;
+}
+
+@font-face {
+  font-family: "chocoladine";
+  src: url("./assets/fonts/chocoladine/Chocoladine.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "asdonuts";
+  src: url("./assets/fonts/asdonuts/Asdonuts.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "frisky_puppy";
+  src: url("./assets/fonts/frisky_puppy/frisky_puppy.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "dunkin_sans";
+  src: url("./assets/fonts/dunkin/dunkin_sans.otf") format("truetype");
+}
