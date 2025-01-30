@@ -67,7 +67,7 @@ const HomePage = () => {
         <NoteListings />
       </div>
       {/* Add note button  */}
-      <button className="bg-[#f08080] text-white text-bold h-[50px] w-[50px] fixed bottom-8 right-4 rounded-full flex flex-col items-center justify-center">
+      <button className="bg-[#f08080] shadow-md text-white text-bold h-[50px] w-[50px] fixed bottom-8 right-4 rounded-full flex flex-col items-center justify-center">
         <a href="/new-note">
           <FaPlus className="inline-block" />
         </a>

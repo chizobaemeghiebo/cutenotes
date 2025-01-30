@@ -1,5 +1,7 @@
 import { FaCalendar } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Spinner from "./Spinner";
 import Card from "./Card";
 
 const NoteListings = () => {
@@ -9,7 +11,7 @@ const NoteListings = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const res = await fetch("http://localhost:5000/notes");
+        const res = await fetch("/api/notes");
         // get the data
         const data = await res.json();
         // set the data to the state
@@ -27,11 +29,12 @@ const NoteListings = () => {
   }, []);
 
   return (
-    <div className=" flex flex-col md:grid md:grid-cols-2 gap-4 lg:grid-cols-3">
+    <>
       {loading ? (
-        <p>Loading...</p>
+        <Spinner loading={loading} />
       ) : (
-        <>
+        // show the spinner if loading is true
+        <div className=" flex flex-col md:grid md:grid-cols-2 gap-4 lg:grid-cols-3">
           {notes.map((note) => (
             <Card>
               <h3 className="font-title">{note.title}</h3>
@@ -39,11 +42,13 @@ const NoteListings = () => {
               <span className="text-gray-500 text-sm flex gap-2 items-center">
                 <FaCalendar /> {note.date}
               </span>
+
+              <Link to={`/notes/${note.id}`}>open</Link>
             </Card>
           ))}
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

@@ -7,12 +7,18 @@ import {
 
 import HomePage from "./pages/HomePage";
 import NewNote from "./pages/NewNote";
+import NotePage, { noteLoader } from "./pages/NotePage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<HomePage />}></Route>
       <Route path="/new-note" element={<NewNote />}></Route>
+      <Route
+        path="/notes/:id"
+        element={<NotePage />}
+        loader={noteLoader}
+      ></Route>
     </>
   )
 );
