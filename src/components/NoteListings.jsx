@@ -39,19 +39,17 @@ const NoteListings = ({ deleteNote }) => {
         <div className=" flex flex-col md:grid md:grid-cols-2 gap-4 lg:grid-cols-3">
           {notes.map((note) => (
             <Card>
-              <h3 className="font-title">{note.title}</h3>
+              <div className="flex items-center justify-between">
+                <h3 className="font-title">{note.title}</h3>
+                <Link to={`/notes/${note.id}`} className="">
+                  <img src={EditIcon} alt="edit note" />
+                </Link>
+              </div>
               <p className="font-note">{note.content}</p>
 
-              <div className="flex items-center justify-between mt-4">
-                <span className="text-slate-900 text-sm flex gap-2 items-center">
-                  <FaCalendar /> {note.date}
-                </span>
-                <div className="flex items-center gap-1.5">
-                  <Link to={`/notes/${note.id}`}>
-                    <img src={EditIcon} alt="edit note" />
-                  </Link>
-                </div>
-              </div>
+              <span className="text-xs text-slate-900 flex gap-2 items-center">
+                <FaCalendar /> {note.date}
+              </span>
             </Card>
           ))}
         </div>

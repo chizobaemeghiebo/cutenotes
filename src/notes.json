@@ -2,9 +2,9 @@
   "notes": [
     {
       "id": "3d29",
-      "title": "Note with complete styling",
-      "content": "This note has the correct date format",
-      "date": "Fri Jan 31 2025 09:47:08 GMT+01"
+      "title": "Note completed",
+      "content": "This note app now works perfectly and the time now works",
+      "date": "Fri Jan 31 2025 12:21:33 GMT+01"
     },
     {
       "id": "6578",
@@ -19,10 +19,10 @@
       "date": "Fri Jan 31 2025 10:38:41 GMT+01"
     },
     {
-      "id": "ba86",
-      "title": "Note 4",
-      "content": "This is a note that shows me loosing my minddddddddddddd😊😊",
-      "date": "Fri Jan 31 2025 11:10:33 GMT+01"
+      "id": "d2f1",
+      "title": "Note With Longer Text",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "date": "Fri Jan 31 2025 11:30:04 GMT+01"
     }
   ]
 }

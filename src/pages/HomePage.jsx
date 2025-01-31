@@ -5,7 +5,7 @@ import NoteListings from "../components/NoteListings";
 const HomePage = () => {
   return (
     <div className="flex flex-col items-center bg-red-100 min-h-screen relative">
-      <div className="container mx-auto w-[90%] rounded-md">
+      <div className="container mx-auto w-[90%] rounded-md mb-8">
         <h1 className="font-heading py-8 text-4xl md:text-8xl text-center ">
           Cute Notes
         </h1>

@@ -35,6 +35,18 @@ const App = () => {
     });
   };
 
+  // update a note
+  const editNote = async (note) => {
+    const res = await fetch(`/api/notes/${note.id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "applicatiion.json",
+      },
+      body: JSON.stringify(note),
+    });
+    return;
+  };
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
@@ -46,7 +58,9 @@ const App = () => {
         <Route path="/delete" element={<DeleteNote />}></Route>
         <Route
           path="/notes/:id"
-          element={<NotePage deleteNote={deleteNote} />}
+          element={
+            <NotePage deleteNote={deleteNote} editNoteSubmit={editNote} />
+          }
           loader={noteLoader}
         ></Route>
       </>
