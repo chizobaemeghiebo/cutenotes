@@ -1,6 +1,8 @@
 import { FaCalendar } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import EditIcon from "../assets/images/edit.svg";
+import TrashIcon from "../assets/images/trash.svg";
 import Spinner from "./Spinner";
 import Card from "./Card";
 
@@ -39,11 +41,20 @@ const NoteListings = () => {
             <Card>
               <h3 className="font-title">{note.title}</h3>
               <p className="font-note">{note.content}</p>
-              <span className="text-gray-500 text-sm flex gap-2 items-center">
-                <FaCalendar /> {note.date}
-              </span>
 
-              <Link to={`/notes/${note.id}`}>open</Link>
+              <div className="flex items-center justify-between mt-4">
+                <span className="text-slate-900 text-sm flex gap-2 items-center">
+                  <FaCalendar /> {note.date}
+                </span>
+                <div className="flex items-center gap-1.5">
+                  <Link to={`/notes/${note.id}`}>
+                    <img src={EditIcon} alt="edit note" />
+                  </Link>
+                  <Link to="/delete">
+                    <img src={TrashIcon} alt="delete note" />
+                  </Link>
+                </div>
+              </div>
             </Card>
           ))}
         </div>
