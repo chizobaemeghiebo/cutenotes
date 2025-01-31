@@ -8,7 +8,7 @@ import {
 import HomePage from "./pages/HomePage";
 import NewNote from "./pages/NewNote";
 // test import delete page
-import DeleteNote from "./components/DeleteNote";
+import DeleteNote from "./pages/DeleteNote";
 import NotePage, { noteLoader } from "./pages/NotePage";
 
 const App = () => {

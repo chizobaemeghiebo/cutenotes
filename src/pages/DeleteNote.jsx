@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Card from "./Card";
+import Card from "../components/Card";
 const DeleteNote = () => {
   return (
     <div className="bg-red-100 flex justify-center items-center min-h-screen">

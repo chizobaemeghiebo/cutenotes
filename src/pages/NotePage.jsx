@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useParams, useLoaderData, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import DeleteNote from "./DeleteNote";
 import Card from "../components/Card";
 import BackIcon from "../assets/images/arrow-left.svg";
 import TrashIcon from "../assets/images/trash.svg";
@@ -30,10 +31,10 @@ const NotePage = ({ deleteNote, editNoteSubmit }) => {
   };
 
   const onDeleteClick = (noteId) => {
-    const confirm = window.confirm("Are you sure?");
+    // const confirm = window.confirm("Are you sure?");
 
-    if (!confirm) return;
-
+    // if (!confirm) return;
+    // navigate("/new-note");
     deleteNote(noteId);
 
     navigate("/");
@@ -52,7 +53,7 @@ const NotePage = ({ deleteNote, editNoteSubmit }) => {
             to="/"
             className="flex gap-2 hover:text-[#f08080] "
           >
-            <img src={TrashIcon} alt="go back" />
+            <img src={TrashIcon} alt="delete note" />
           </Link>
         </div>
         <Card>
