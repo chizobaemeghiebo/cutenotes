@@ -29,7 +29,10 @@ const App = () => {
 
   // Delete a note
   const deleteNote = async (id) => {
-    console.log("delete", id);
+    // console.log("delete", id);
+    const res = await fetch(`/api/notes/${id}`, {
+      method: "Delete",
+    });
   };
 
   const router = createBrowserRouter(

@@ -6,7 +6,7 @@ import TrashIcon from "../assets/images/trash.svg";
 import Spinner from "./Spinner";
 import Card from "./Card";
 
-const NoteListings = () => {
+const NoteListings = ({ deleteNote }) => {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -49,9 +49,6 @@ const NoteListings = () => {
                 <div className="flex items-center gap-1.5">
                   <Link to={`/notes/${note.id}`}>
                     <img src={EditIcon} alt="edit note" />
-                  </Link>
-                  <Link to="/delete">
-                    <img src={TrashIcon} alt="delete note" />
                   </Link>
                 </div>
               </div>

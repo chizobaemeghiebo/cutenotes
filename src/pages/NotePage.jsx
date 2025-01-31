@@ -1,13 +1,28 @@
 // useparams is a hook that allows us to access the parameters of the current route e.g /note/:noteId
-import { useParams, useLoaderData } from "react-router-dom";
+import { useState } from "react";
+import { useParams, useLoaderData, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import BackIcon from "../assets/images/arrow-left.svg";
-const NotePage = () => {
-  const { id } = useParams();
-  const note = useLoaderData();
+import TrashIcon from "../assets/images/trash.svg";
 
-  // TODO: Add date
+const NotePage = ({ deleteNote }) => {
+  const note = useLoaderData();
+  const [newTitle, setNewTitle] = useState(note.title);
+  const [newContent, setNewContent] = useState(note.content);
+
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const onDeleteClick = (noteId) => {
+    const confirm = window.confirm("Are you sure?");
+
+    if (!confirm) return;
+
+    deleteNote(noteId);
+
+    navigate("/");
+  };
 
   return (
     <div className="flex flex-col items-center justify-center bg-red-100 min-h-screen relative">
@@ -19,22 +34,33 @@ const NotePage = () => {
           <img src={BackIcon} alt="go back" />
           <span className="inline-block">Go back</span>
         </Link>
+        <Link
+          onClick={() => onDeleteClick(note.id)}
+          to="/"
+          className="flex gap-2 hover:text-[#f08080] absolute -top-20 right-0"
+        >
+          <img src={TrashIcon} alt="go back" />
+        </Link>
         <Card>
           <h1 className="text-center mb-8 font-title text-2xl">Edit Note</h1>
           <div className="relative p-2 border border-red-200 rounded">
-            <p>{note.title}</p>
             <input
               type="text"
-              placeholder="title"
+              placeholder="Add title"
               className="w-full focus:ring-0 outline-0"
+              required
+              value={newTitle}
+              onChange={(e) => setNewTitle(e.target.value)}
             />
           </div>
           <div className="my-4 p-2 border border-red-200 rounded">
-            <p>{note.content}</p>
             <textarea
-              placeholder="your notes"
+              placeholder="Start writing"
               rows={7}
               className="w-full focus:ring-0 outline-0"
+              required
+              value={newContent}
+              onChange={(e) => setNewContent(e.target.value)}
             ></textarea>
           </div>
 

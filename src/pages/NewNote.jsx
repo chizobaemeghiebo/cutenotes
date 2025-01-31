@@ -19,7 +19,6 @@ const NewNote = ({ addNoteSubmit }) => {
       content,
       date: newDate,
     };
-    console.log(newDate);
     addNoteSubmit(newNote);
 
     return navigate("/");
