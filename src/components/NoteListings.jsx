@@ -13,7 +13,9 @@ const NoteListings = ({ deleteNote }) => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const res = await fetch("/api/notes");
+        const notesFromStorage = localStorage.getItem("notes");
+        const res = { json: async () => JSON.parse(notesFromStorage || "[]") };
+        // const res = await fetch("/api/notes");
         // get the data
         const data = await res.json();
         // set the data to the state
@@ -38,7 +40,7 @@ const NoteListings = ({ deleteNote }) => {
         // show the spinner if loading is true
         <div className=" flex flex-col md:grid md:grid-cols-2 gap-4 lg:grid-cols-3">
           {notes.map((note) => (
-            <Card>
+            <Card key={note.id}>
               <div className="flex items-center justify-between">
                 <h3 className="font-title">{note.title}</h3>
                 <Link to={`/notes/${note.id}`} className="">

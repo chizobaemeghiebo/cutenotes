@@ -100,8 +100,12 @@ const NotePage = ({ deleteNote, editNoteSubmit }) => {
 
 // This function is used to fetch a single note from the server using the id of the note as a parameter to the function and returns the data of the note as an object.
 const noteLoader = async ({ params }) => {
-  const res = await fetch(`/api/notes/${params.id}`);
-  const data = await res.json();
+  const notes = localStorage.getItem("notes");
+  const res = JSON.parse(notes).find((note) => note.id === params.id);
+  // const res = JSON.parse(notes);
+  // const res = await fetch(`/api/notes/${params.id}`);
+  const data = await res;
+  // const data = await res.json();
   return data;
 };
 

@@ -17,6 +17,7 @@ const NewNote = ({ addNoteSubmit }) => {
     const newNote = {
       title,
       content,
+      id: Math.random().toString(36).substr(2, 9),
       date: newDate,
     };
     addNoteSubmit(newNote);
