@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
-import Card from "../components/Card";
 import NoteListings from "../components/NoteListings";
 
 const HomePage = () => {
@@ -68,9 +68,9 @@ const HomePage = () => {
       </div>
       {/* Add note button  */}
       <button className="bg-[#f08080] shadow-md text-white text-bold h-[50px] w-[50px] fixed bottom-8 right-4 rounded-full flex flex-col items-center justify-center">
-        <a href="/new-note">
+        <Link to="/new-note">
           <FaPlus className="inline-block" />
-        </a>
+        </Link>
       </button>
     </div>
   );
