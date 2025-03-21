@@ -1,28 +1,22 @@
 {
   "notes": [
     {
-      "id": "d2f1",
-      "title": "Note With Longer Text",
-      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      "date": "Fri Jan 31 2025 11:30:04 GMT+01"
-    },
-    {
       "id": "a3a7",
-      "title": "Todo",
-      "content": "Don't forget to publish the code.",
-      "date": "Fri Jan 31 2025 12:33:46 GMT+01"
+      "title": "Todo - 10",
+      "content": "New note",
+      "date": "Fri Jan 31 2025 21:27:35 GMT+01"
     },
     {
-      "id": "9ef4",
-      "title": "Test",
-      "content": "This app is working",
-      "date": "Fri Jan 31 2025 12:40:42 GMT+01"
+      "id": "7b12",
+      "title": "Testing Note",
+      "content": "This is a test note",
+      "date": "Fri Jan 31 2025 21:26:17 GMT+01"
     },
     {
-      "id": "049f",
-      "title": "Todo - 2",
-      "content": "Work on app design",
-      "date": "Fri Jan 31 2025 12:41:08 GMT+01"
+      "id": "b28c",
+      "title": "Note 3",
+      "content": "Don't forget to host the project\n",
+      "date": "Fri Jan 31 2025 21:26:45 GMT+01"
     }
   ]
 }
