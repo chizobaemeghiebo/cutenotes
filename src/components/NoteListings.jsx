@@ -63,7 +63,7 @@ const NoteListings = () => {
                 </Link>
               )}
 
-              <span className="absolute bottom-4 right-4 text-xs text-slate-900 flex gap-2">
+              <span className="mt-4 md:m-0 md:absolute md:bottom-4 md:right-4 text-xs text-slate-900 flex gap-2">
                 <FaCalendar /> {note.date}
               </span>
             </Card>
