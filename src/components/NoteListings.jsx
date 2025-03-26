@@ -2,6 +2,7 @@ import { FaCalendar } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import EditIcon from "../assets/images/edit.svg";
+import DeleteIcon from "../assets/images/trash.svg";
 import Spinner from "./Spinner";
 import Card from "./Card";
 
@@ -49,7 +50,7 @@ const NoteListings = () => {
             <Card key={note.id}>
               <div className="flex items-center justify-between">
                 <h3 className="font-title">{note.title}</h3>
-                <Link to={`/notes/${note.id}`} className="">
+                <Link to={`/notes/${note.id}`}>
                   <img src={EditIcon} alt="edit note" />
                 </Link>
               </div>

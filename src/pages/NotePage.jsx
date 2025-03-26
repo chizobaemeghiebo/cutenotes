@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { useParams, useLoaderData, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import DeleteNote from "./DeleteNote";
 import Card from "../components/Card";
 import BackIcon from "../assets/images/arrow-left.svg";
 import TrashIcon from "../assets/images/trash.svg";
@@ -17,8 +16,7 @@ const NotePage = ({ deleteNote, editNoteSubmit }) => {
 
   const editForm = (e) => {
     e.preventDefault();
-    const newDate = new Date().toString().slice(0, -30);
-
+    const newDate = new Date().toDateString();
     const editedNote = {
       id,
       title,
@@ -31,10 +29,6 @@ const NotePage = ({ deleteNote, editNoteSubmit }) => {
   };
 
   const onDeleteClick = (noteId) => {
-    // const confirm = window.confirm("Are you sure?");
-
-    // if (!confirm) return;
-    // navigate("/new-note");
     deleteNote(noteId);
 
     navigate("/");
@@ -50,7 +44,6 @@ const NotePage = ({ deleteNote, editNoteSubmit }) => {
           </Link>
           <Link
             onClick={() => onDeleteClick(note.id)}
-            to="/"
             className="flex gap-2 hover:text-[#f08080] "
           >
             <img src={TrashIcon} alt="delete note" />
@@ -85,13 +78,6 @@ const NotePage = ({ deleteNote, editNoteSubmit }) => {
               </button>
             </div>
           </form>
-
-          {/* <h3 className="font-title">{note.title}</h3>
-          <p className="font-note">{note.content}</p>
-          <span className="text-gray-500 text-sm flex gap-2 items-center">
-            <FaCalendar /> {note.date}
-          </span>
-          <Link to={`/notes/${note.id}`}>open</Link> */}
         </Card>
       </div>
     </div>

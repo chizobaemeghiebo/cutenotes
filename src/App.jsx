@@ -75,12 +75,11 @@ const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/" element={<HomePage deleteNote={deleteNote} />}></Route>
         <Route
           path="/new-note"
           element={<NewNote addNoteSubmit={addNote} />}
         ></Route>
-        <Route path="/delete" element={<DeleteNote />}></Route>
         <Route
           path="/notes/:id"
           element={

@@ -10,7 +10,8 @@ const NewNote = ({ addNoteSubmit }) => {
 
   // the useNavigate is a function that redirects the user back to the home screen when the form is submitted
   const navigate = useNavigate();
-  const newDate = new Date().toString().slice(0, -30);
+  const newDate = new Date().toDateString();
+  // const newDate = new Date().toString().slice(0, -30);
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ const NewNote = ({ addNoteSubmit }) => {
       title,
       content,
       id: Math.random().toString(36).substr(2, 9),
+      // date,
       date: newDate,
     };
     addNoteSubmit(newNote);
